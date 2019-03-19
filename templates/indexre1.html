@@ -1,0 +1,229 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='https://static.codepen.io/assets/editor/live/console_runner-1df7d3399bdc1f40995a35209755dcfd8c7547da127f6469fd81e5fba982f6af.js'></script><script src='https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/jasperlachance/pen/QNMwBg" />
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<style class="cp-pen-styles">.large-header {
+   position: relative;
+   width: 100%;
+   background: #111;
+   overflow: hidden;
+   background-size: cover;
+   background-position: center center;
+   z-index: 1;
+}
+
+.demo .large-header {
+   background-image: url("http://i66.tinypic.com/34ih73c.jpg");
+}
+
+.main-title {
+   position: absolute;
+   margin: 0;
+   padding: 0;
+   color: #F9F1E9;
+   text-align: center;
+   top: 50%;
+   left: 50%;
+   -webkit-transform: translate3d(-50%, -50%, 0);
+   transform: translate3d(-50%, -50%, 0);
+}
+
+.demo .main-title {
+   text-transform: uppercase;
+   font-size: 4.2em;
+   letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+   font-weight: 50;
+}
+
+@media only screen and (max-width: 768px) {
+   .demo .main-title {
+      font-size: 3em;
+   }
+}</style>
+<style type="text/css">
+	.codrops-header {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+	max-width: 900px;
+}
+
+.codrops-header h1 {
+	margin: 0;
+	font-size: 4.5em;
+	line-height: 1;
+	font-weight: 200;
+}
+
+.codrops-header h1 span {
+	display: block;
+	padding: 1em 0 1.5em;
+	font-size: 36%;
+	color: #95a5a6;
+	line-height: 1.4;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.69em;
+	text-align: center;
+	padding: 3em 0;
+}
+
+.codrops-top a {
+	display: inline-block;
+	padding: 1.5em;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.codrops-icon:before {
+	margin: 0 4px;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+/* Demo Buttons Style */
+.codrops-demos {
+	padding-top: 1em;
+	font-size: 0.8em;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0.35em 0.1em;
+	padding: 0.5em 1.2em;
+	outline: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	border-radius: 2px;
+	font-size: 110%;
+	border: 2px solid transparent;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo {
+	border-color: #383a3c;
+}
+
+.codrops-demos h3 {
+	margin: 0;
+	padding: 1em 0 0.5em 0;
+	font-size: 0.9em;
+	float: left;
+	min-width: 90px;
+	clear: left;
+}
+
+.codrops-demos div:not(:first-child) h3 {
+	padding-top: 2em;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo {
+	color: inherit;
+	border-color: initial;
+}
+
+/* Related demos */
+.related {
+	padding: 10em 0;
+}
+
+.related p {
+	font-size: 1.5em;
+}
+
+.related > a {
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	vertical-align: middle;
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	min-height: 63px;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 1em;
+}
+
+@media screen and (max-width: 40em) {
+
+	.codrops-header h1 {
+		font-size: 2.5em;
+	}
+}
+</style>
+
+
+
+</head><body>
+<div class="container demo">
+   <div class="content">
+      <div id="large-header" class="large-header">
+         <canvas id="demo-canvas"></canvas>
+        <h1 class="main-title">TECH  <span class="thin">FUSION</span></h1>
+      </div>
+   </div>
+   <div class="codrops-header">
+					<h1>TECHFUSION<span>IMPLEMENTING TECHNOLOGY INTO DAILY LIVES</span></h1>
+					<nav class="codrops-demos">
+						<a class="current-demo" href="/home">HOME</a>
+						<a class="current-demo" href="/logout">LOGOUT</a>
+						<a class="current-demo" href="/appl">APPS</a>
+				
+						<a class="current-demo" href="/forum">FORUM</a>
+
+						
+						
+					</nav>
+				</div>
+</div>
+<script src='https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js'></script><script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js'></script><script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js'></script><script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js'></script>
+        <script id="rendered-js">
+          // There are a few JS dependancies
+
+// Check the settings to take a look
+// at those as they are necessary.
+          //# sourceURL=pen.js
+        </script>
+</body></html>
